@@ -42,4 +42,18 @@ function renderActivity(recipe) {
 	
 }
 
+/**
+ * Funcion que oculta elemento dependiendo de la pagina en la que este.
+ * Primero obtengo la url y la convierto en un array
+ * Luego tomo el ultimo elemento del array formado, este indica en que pagina estoy, si en index.html o recipe.html
+ * Dependiendo en que pagina me encuentre oculto el elemento
+ */
+var path = window.location.pathname.split("/");
+var pagina = path[path.length-1];
+if(pagina==='index.html'){
+	$('.js-back').hide();
+}else if(pagina==='recipe.html'){
+	$('.js-menu').hide();
+}
+
 
