@@ -43,7 +43,7 @@ function renderActivity(recipe) {
 }
 
 /**
- * Funcion que oculta elemento dependiendo de la pagina en la que este.
+ * Ocultar elemento dependiendo de la pagina en la que este.
  * Primero obtengo la url y la convierto en un array
  * Luego tomo el ultimo elemento del array formado, este indica en que pagina estoy, si en index.html o recipe.html
  * Dependiendo en que pagina me encuentre oculto el elemento
@@ -55,5 +55,21 @@ if(pagina==='index.html'){
 }else if(pagina==='recipe.html'){
 	$('.js-menu').hide();
 }
+
+
+/**
+ * Funcion para asignar texto al parrafo
+ * Con el metodo children() obtengo el primer elemento p que se encuentre en el div
+ * Con html() le asigno el texto "nuevas recetas".
+ */
+function printNews() {
+	var hijo = $('.callout-news').children('p');
+	hijo.html('<b>NUEVAS RECETAS</b>');
+}
+printNews();
+
+
+
+
 
 
