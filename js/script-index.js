@@ -62,6 +62,9 @@ function renderActivities(activities) {
 	for (var i = 0; i < activities.length; i++) {
 		renderActivity(activities[i]);
 	} 
+	if(activities.length==0){
+		$('.wrapper-message').css('display','block');
+	}
 }
 
 /*
@@ -70,6 +73,7 @@ function renderActivities(activities) {
 * archivo "templates/templates-activity.html"
 */
 function renderActivity(recipe) {
+	
 	var avatar = recipe.userAvatar;
 	var name = recipe.userName;
 	var title = recipe.recipeName;
