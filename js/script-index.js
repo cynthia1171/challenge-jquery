@@ -2,6 +2,7 @@ $(document).ready( function(){
 
 	//La variable "recipesArray" esta declarada en el archivo "data/recipes.js"
 	(renderHighlightedRecipes(recipesArray));
+	(renderActivities(activities));
 
 });
 
@@ -34,18 +35,19 @@ function renderRecipe(recipe) {
 		var image = recipe.name;	
 		
 		$('.list-recipes').append('<a class="item-recipe" href="#">'+
-			'< span class= "attribution" >'+
-			'<span class="title-recipe">'+title+'</span>'+
-			'<span class="metadata-recipe">'+
-				'<span class="author-recipe">'+name+'</span>'+
-				'<span class="bookmarks-recipe">'+
-					'<span class="icon-bookmark"></span>'+
-				'</span>'+
-			'</span>'+
-  '</span >'+
+																'< span class= "attribution" >'+
+																	'<span class="title-recipe">'+title+'</span>'+
+																	'<span class="metadata-recipe">'+
+																		'<span class="author-recipe">'+name+'</span>'+
+																		'<span class="bookmarks-recipe">'+
+																			'<span class="icon-bookmark"></span>'+
+																		'</span>'+
+																	'</span>'+
+  															'</span >'+
 
-			'<img src="img/recipes/320x350/'+image+'.jpg" />'+
-'</a >')
+																'<img src="img/recipes/320x350/'+image+'.jpg" />'+
+															'</a >'
+															)
 	});
 }
 
@@ -55,8 +57,11 @@ function renderRecipe(recipe) {
 /*
 * Función que se encarga de pintar todas las actividades
 */
-function renderActivities(activitiesArray) {
-	console.log('Activities: ', activitiesArray);
+function renderActivities(activities) {
+	console.log('Activities: ', activities);
+	for (var i = 0; i < activities.length; i++) {
+		renderActivity(activities[i]);
+	} 
 }
 
 /*
@@ -65,7 +70,26 @@ function renderActivities(activitiesArray) {
 * archivo "templates/templates-activity.html"
 */
 function renderActivity(recipe) {
-	
+	var avatar = recipe.userAvatar;
+	var name = recipe.userName;
+	var title = recipe.recipeName;
+	var texto = recipe.text;
+	var place = recipe.place;
+	var image = recipe.image;	
+	$('.list-activities').append('<a href="#" class="item-activity">'+
+																	'<span class= "attribution">'+
+																		'<span class="avatar">'+
+																			'<img src="'+avatar+'" class="image-avatar">'+
+																		'</span>'+
+																		'<span class="meta">'+
+																			'<span class="author">'+name+'</span>'+
+																			'<span class="recipe">'+title+'</span>: '+texto+
+																			'<span class="location">&mdash;'+place+'</span>'+
+																		'</span>'+
+																	'</span >'+
+																	'<div class="bg-image" style="background-image: url(' + image +');"></div>'+
+																'</a >'
+															);
 }
 
 /**
