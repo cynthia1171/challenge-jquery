@@ -64,6 +64,7 @@ function renderActivities(activities) {
 	} 
 	if(activities.length==0){
 		$('.wrapper-message').css('display','block');
+		
 	}
 }
 
