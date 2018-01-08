@@ -34,8 +34,6 @@ function renderHighlightedRecipes(recipesArray) {
 * archivo "templates/templates-recipe.html"
 */
 function renderRecipe(recipe) {
-	//var newArray = [];
-	$('.btn-primary').click(function(){
 		var title = recipe.title;
 		var name = recipe.source.name;
 		var image = recipe.name;	
@@ -54,7 +52,7 @@ function renderRecipe(recipe) {
 																'<img src="img/recipes/320x350/'+image+'.jpg" />'+
 															'</a >'
 															)
-	});
+	
 }
 
 
