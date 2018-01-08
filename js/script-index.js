@@ -61,12 +61,12 @@ function renderRecipe(recipe) {
 /*
 * Función que se encarga de pintar todas las actividades
 */
-function renderActivities(activities) {
-	console.log('Activities: ', activities);
-	for (var i = 0; i < activities.length; i++) {
-		renderActivity(activities[i]);
+function renderActivities(activitiesArray) {
+	console.log('Activities: ', activitiesArray);
+	for (var i = 0; i < activitiesArray.length; i++) {
+		renderActivity(activitiesArray[i]);
 	} 
-	if(activities.length==0){
+	if (activitiesArray.length===0){
 		$('.wrapper-message').css('display','block');
 		
 	}
