@@ -1,7 +1,7 @@
 $(document).ready( function(){
 
 	//La variable "recipesArray" esta declarada en el archivo "data/recipes.js"
-	renderHighlightedRecipes(recipesArray);
+	(renderHighlightedRecipes(recipesArray));
 
 });
 
@@ -14,10 +14,11 @@ function renderHighlightedRecipes(recipesArray) {
 	console.log('Recipes: ', recipesArray);
 	for(var i=0; i<recipesArray.length; i++){
 		if (recipesArray[i].highlighted == true){
-			renderRecipe(recipesArray[i].highlighted);
+			renderRecipe(recipesArray[i]);
 		}
 	}
 }
+
 
 /*
 * Función que se encarga de pintar UNA recetas que tenga 
@@ -26,8 +27,28 @@ function renderHighlightedRecipes(recipesArray) {
 * archivo "templates/templates-recipe.html"
 */
 function renderRecipe(recipe) {
-	console.log('Voy a pintar la receta: ', recipe);
+	//var newArray = [];
+	$('.btn-primary').click(function(){
+		var title = recipe.title;
+		var name = recipe.source.name;
+		var image = recipe.name;	
+		
+		$('.list-recipes').append('<a class="item-recipe" href="#">'+
+			'< span class= "attribution" >'+
+			'<span class="title-recipe">'+title+'</span>'+
+			'<span class="metadata-recipe">'+
+				'<span class="author-recipe">'+name+'</span>'+
+				'<span class="bookmarks-recipe">'+
+					'<span class="icon-bookmark"></span>'+
+				'</span>'+
+			'</span>'+
+  '</span >'+
+
+			'<img src="img/recipes/320x350/'+image+'.jpg" />'+
+'</a >')
+	});
 }
+
 
 
 
