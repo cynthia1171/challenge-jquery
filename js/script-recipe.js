@@ -1,15 +1,16 @@
 $(document).ready(function(){
-  console.log('he cargado');
-})
-
-/**
+  /**
  * ocultar elemento js-menu mientras este en pagina recipe.html
  */
-var path = window.location.pathname.split("/");
-var pagina = path[path.length - 1];
-if (pagina === 'recipe.html') {
   $('.js-menu').hide();
-}
+
+  console.log('he cargado');
+
+
+})
+
+
+
 
 /**
  * funcion ocultar clase make y añadir clase active

@@ -1,5 +1,11 @@
 $(document).ready( function(){
 
+	/**
+	 * ocultando flecha
+	 */
+	$('.js-back').hide();
+
+
 	//La variable "recipesArray" esta declarada en el archivo "data/recipes.js"
 	(renderHighlightedRecipes(recipesArray));
 	(renderActivities(activities));
@@ -97,17 +103,6 @@ function renderActivity(recipe) {
 															);
 }
 
-/**
- * Ocultar elemento dependiendo de la pagina en la que este.
- * Primero obtengo la url y la convierto en un array
- * Luego tomo el ultimo elemento del array formado, este indica en que pagina estoy, si en index.html o recipe.html
- * Dependiendo en que pagina me encuentre oculto el elemento
- */
-var path = window.location.pathname.split("/");
-var pagina = path[path.length-1];
-if(pagina==='index.html'){
-	$('.js-back').hide();
-}
 
 
 /**
