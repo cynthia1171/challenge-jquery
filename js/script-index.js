@@ -35,7 +35,7 @@ function renderRecipe(recipe) {
 		var image = recipe.name;	
 		
 		$('.list-recipes').append('<a class="item-recipe" href="#">'+
-																'<span class= "attribution">'+
+																'<span class="attribution">'+
 																	'<span class="title-recipe">'+title+'</span>'+
 																	'<span class="metadata-recipe">'+
 																		'<span class="author-recipe">'+name+'</span>'+
